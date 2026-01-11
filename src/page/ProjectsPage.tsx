@@ -118,7 +118,7 @@ const projects = [
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [hoveredProject, setHoveredProject] = useState(null);
+  const [hoveredProject, setHoveredProject] = useState<any>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   React.useEffect(() => {
@@ -184,7 +184,7 @@ export default function ProjectsPage() {
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover"
-                      onError={(e) => {
+                      onError={(e: any) => {
                         e.target.style.display = 'none';
                         e.target.parentElement.innerHTML = `<div class="text-6xl">${project.title.charAt(
                           0
