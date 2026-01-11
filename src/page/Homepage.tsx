@@ -155,8 +155,21 @@ export default function HomePage() {
       </div>
 
       {/* Floating particles effect */}
-
-      {/* <style jsx>{`
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `float ${5 + Math.random() * 10}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          />
+        ))}
+      </div>
+      <style jsx>{`
         @keyframes float {
           0%,
           100% {
@@ -182,7 +195,7 @@ export default function HomePage() {
         .animate-bounce {
           animation: bounce 2s ease-in-out infinite;
         }
-      `}</style> */}
+      `}</style>
     </div>
   );
 }
