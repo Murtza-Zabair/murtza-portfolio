@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ExternalLink, Github, Code2, Layers, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 const projects = [
   {
     title: 'Reaction Simulator',
@@ -198,7 +199,7 @@ export default function ProjectsPage() {
                         hoveredProject === project.title ? 'opacity-100' : 'opacity-0'
                       }`}
                     >
-                      <a
+                      <Link
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -206,8 +207,8 @@ export default function ProjectsPage() {
                         aria-label="View on GitHub"
                       >
                         <Github className="w-6 h-6 text-white" />
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -215,7 +216,7 @@ export default function ProjectsPage() {
                         aria-label="View live project"
                       >
                         <ExternalLink className="w-6 h-6 text-white" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
@@ -267,7 +268,7 @@ export default function ProjectsPage() {
               These are just a few highlights. Check out my GitHub for more projects and
               contributions.
             </p>
-            <a
+            <Link
               href="https://github.com/Murtza-Zabair"
               target="_blank"
               rel="noopener noreferrer"
@@ -280,7 +281,7 @@ export default function ProjectsPage() {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

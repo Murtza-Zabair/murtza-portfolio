@@ -118,27 +118,27 @@ export default function HomePage() {
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <a
-              href="#"
+            <Link
+              href="https://github.com/Murtza-Zabair"
               className="p-3 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-full hover:bg-slate-700/50 hover:border-blue-500/50 hover:scale-110 transition-all duration-300"
               aria-label="GitHub"
             >
               <Github size={24} className="text-slate-300" />
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="https://linkedin.com/in/murtza-zabair"
               className="p-3 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-full hover:bg-slate-700/50 hover:border-blue-500/50 hover:scale-110 transition-all duration-300"
               aria-label="LinkedIn"
             >
               <Linkedin size={24} className="text-slate-300" />
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="mailto:murtzazabair@gmail.com"
               className="p-3 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-full hover:bg-slate-700/50 hover:border-blue-500/50 hover:scale-110 transition-all duration-300"
               aria-label="Email"
             >
               <Mail size={24} className="text-slate-300" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -155,22 +155,8 @@ export default function HomePage() {
       </div>
 
       {/* Floating particles effect */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float ${5 + Math.random() * 10}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
-            }}
-          />
-        ))}
-      </div>
 
-      <style jsx>{`
+      {/* <style jsx>{`
         @keyframes float {
           0%,
           100% {
@@ -196,7 +182,7 @@ export default function HomePage() {
         .animate-bounce {
           animation: bounce 2s ease-in-out infinite;
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 }

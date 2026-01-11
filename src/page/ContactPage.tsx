@@ -12,6 +12,7 @@ import {
   Copy,
   Check,
 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -203,7 +204,7 @@ export default function ContactPage() {
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
-                    <a
+                    <Link
                       key={social.label}
                       href={social.link}
                       target="_blank"
@@ -220,7 +221,7 @@ export default function ContactPage() {
                           {social.label}
                         </span>
                       </div>
-                    </a>
+                    </Link>
                   );
                 })}
               </div>

@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
+import Link from 'next/link';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,7 +36,7 @@ const Footer = () => {
             {socialLinks.map((social) => {
               const Icon = social.icon;
               return (
-                <a
+                <Link
                   key={social.label}
                   href={social.link}
                   target="_blank"
@@ -47,7 +48,7 @@ const Footer = () => {
                   <div className="relative p-2 text-slate-400 hover:text-blue-400 transition-all duration-300 group-hover:scale-110">
                     <Icon className="w-5 h-5" />
                   </div>
-                </a>
+                </Link>
               );
             })}
           </div>

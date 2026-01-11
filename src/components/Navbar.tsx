@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X, Home, User, Briefcase, Mail } from 'lucide-react';
+import Link from 'next/link';
 
 const navItems = [
   { name: 'Home', path: '/', icon: Home },
@@ -51,14 +52,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <a href="/" className="group relative">
+          <Link href="/" className="group relative">
             <div className="absolute -inset-2 bg-linear-to-r from-blue-500 to-slate-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-500" />
             <div className="relative text-2xl font-bold">
               <span className="bg-linear-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
                 MZ
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-2">
@@ -67,7 +68,7 @@ export default function Navbar() {
               const isActive = pathname === item.path;
 
               return (
-                <a key={item.path} href={item.path} className="group relative">
+                <Link key={item.path} href={item.path} className="group relative">
                   <div
                     className={`absolute -inset-2 bg-linear-to-r from-blue-500 to-slate-500 rounded-lg blur opacity-0 group-hover:opacity-20 transition duration-500`}
                   />
@@ -86,7 +87,7 @@ export default function Navbar() {
                   {isActive && (
                     <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-blue-400 to-slate-400 rounded-full" />
                   )}
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -121,7 +122,7 @@ export default function Navbar() {
               const isActive = pathname === item.path;
 
               return (
-                <a
+                <Link
                   key={item.path}
                   href={item.path}
                   onClick={() => setMobileMenuOpen(false)}
@@ -136,7 +137,7 @@ export default function Navbar() {
                 >
                   <Icon size={20} />
                   <span className="font-medium">{item.name}</span>
-                </a>
+                </Link>
               );
             })}
 
