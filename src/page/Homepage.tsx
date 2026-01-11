@@ -143,7 +143,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div
+        {/* <div
           className={`absolute bottom-10 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
@@ -151,7 +151,7 @@ export default function HomePage() {
           <div className="animate-bounce">
             <ArrowDown className="text-slate-500" size={32} />
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Floating particles effect */}
