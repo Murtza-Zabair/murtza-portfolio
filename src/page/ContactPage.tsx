@@ -78,7 +78,7 @@ export default function ContactPage() {
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-slate-300 to-blue-300 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-400 via-slate-300 to-blue-300 bg-clip-text text-transparent">
               Get In Touch
             </span>
           </h1>
@@ -98,7 +98,7 @@ export default function ContactPage() {
           >
             <div className="relative">
               {/* Glowing effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-slate-500 rounded-2xl blur-xl opacity-20" />
+              <div className="absolute -inset-1 bg-linear-to-r from-blue-500 to-slate-500 rounded-2xl blur-xl opacity-20" />
 
               <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 space-y-6">
                 <div>
@@ -140,13 +140,13 @@ export default function ContactPage() {
 
                 <button
                   onClick={handleSubmit}
-                  className="group relative w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-slate-600 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-[1.02]"
+                  className="group relative w-full px-8 py-4 bg-linear-to-r from-blue-600 to-slate-600 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-[1.02]"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     Send Message
                     <Send size={18} className="group-hover:translate-x-1 transition-transform" />
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function ContactPage() {
                     onClick={() => copyToClipboard(info.value, info.label)}
                   >
                     <div
-                      className={`absolute -inset-0.5 bg-gradient-to-r from-${info.color}-500 to-slate-500 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-500`}
+                      className={`absolute -inset-0.5 bg-linear-to-r from-${info.color}-500 to-slate-500 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-500`}
                     />
 
                     <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 flex items-start gap-4 group-hover:border-slate-600 transition-all">
@@ -212,7 +212,7 @@ export default function ContactPage() {
                       className="group relative"
                     >
                       <div
-                        className={`absolute -inset-0.5 bg-gradient-to-r ${social.color} rounded-xl blur opacity-0 group-hover:opacity-50 transition duration-500`}
+                        className={`absolute -inset-0.5 bg-linear-to-r ${social.color} rounded-xl blur opacity-0 group-hover:opacity-50 transition duration-500`}
                       />
 
                       <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 flex flex-col items-center gap-3 group-hover:border-slate-600 transition-all group-hover:scale-105">
@@ -229,7 +229,7 @@ export default function ContactPage() {
 
             {/* Availability Status */}
             <div className="relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl blur opacity-20" />
+              <div className="absolute -inset-0.5 bg-linear-to-r from-green-500 to-emerald-500 rounded-xl blur opacity-20" />
 
               <div className="relative bg-slate-900/50 backdrop-blur-sm border border-green-500/30 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-2">

@@ -144,7 +144,7 @@ export default function ProjectsPage() {
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-slate-300 to-blue-300 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-400 via-slate-300 to-blue-300 bg-clip-text text-transparent">
               Featured Projects
             </span>
           </h1>
@@ -172,14 +172,14 @@ export default function ProjectsPage() {
               <div className="relative group h-full">
                 {/* Glowing border effect */}
                 <div
-                  className={`absolute -inset-0.5 bg-gradient-to-r ${project.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500`}
+                  className={`absolute -inset-0.5 bg-linear-to-r ${project.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500`}
                 />
 
                 {/* Card */}
                 <div className="relative bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden h-full flex flex-col group-hover:border-slate-600 transition-all duration-300">
                   {/* Image Section */}
                   <div
-                    className={`relative h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}
+                    className={`relative h-48 bg-linear-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}
                   >
                     <img
                       src={project.image}
@@ -221,11 +221,11 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col flex-grow">
+                  <div className="p-6 flex flex-col grow">
                     {/* Category badge */}
                     <div className="mb-3">
                       <span
-                        className={`inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r ${project.gradient} bg-opacity-10 rounded-full text-xs font-medium`}
+                        className={`inline-flex items-center gap-1 px-3 py-1 bg-linear-to-r ${project.gradient} bg-opacity-10 rounded-full text-xs font-medium`}
                       >
                         <Layers className="w-3 h-3" />
                         {project.category}
@@ -238,7 +238,7 @@ export default function ProjectsPage() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-slate-400 mb-4 flex-grow leading-relaxed text-sm">
+                    <p className="text-slate-400 mb-4 grow leading-relaxed text-sm">
                       {project.description}
                     </p>
 
@@ -262,7 +262,7 @@ export default function ProjectsPage() {
 
         {/* CTA Section */}
         <div className="text-center mt-20">
-          <div className="inline-block p-8 bg-gradient-to-br from-blue-500/10 to-slate-500/10 rounded-2xl border border-blue-500/20">
+          <div className="inline-block p-8 bg-linear-to-br from-blue-500/10 to-slate-500/10 rounded-2xl border border-blue-500/20">
             <h3 className="text-2xl font-bold mb-4 text-white">Want to see more?</h3>
             <p className="text-slate-400 mb-6 max-w-md">
               These are just a few highlights. Check out my GitHub for more projects and
@@ -274,12 +274,12 @@ export default function ProjectsPage() {
               rel="noopener noreferrer"
               className="group relative inline-block"
             >
-              <button className="relative px-8 py-4 bg-gradient-to-r from-blue-600 to-slate-600 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105">
+              <button className="relative px-8 py-4 bg-linear-to-r from-blue-600 to-slate-600 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105">
                 <span className="relative z-10 flex items-center gap-2">
                   <Github size={20} />
                   View GitHub Profile
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
             </Link>
           </div>

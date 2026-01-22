@@ -110,11 +110,11 @@ export default function AboutPage() {
             >
               <div>
                 <h2 className="text-5xl md:text-6xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-blue-400 via-slate-300 to-blue-300 bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-blue-400 via-slate-300 to-blue-300 bg-clip-text text-transparent">
                     About Me
                   </span>
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-slate-500 rounded-full" />
+                <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-slate-500 rounded-full" />
               </div>
 
               <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
@@ -148,7 +148,7 @@ export default function AboutPage() {
               </div>
 
               {/* Education */}
-              <div className="relative p-6 bg-gradient-to-br from-blue-500/10 to-slate-500/10 rounded-xl border border-blue-500/20">
+              <div className="relative p-6 bg-linear-to-br from-blue-500/10 to-slate-500/10 rounded-xl border border-blue-500/20">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-blue-500/20 rounded-lg">
                     <svg
@@ -181,19 +181,19 @@ export default function AboutPage() {
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-6 pt-4">
                 <div className="text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  <div className="text-4xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                     20+
                   </div>
                   <div className="text-slate-400 text-sm mt-1">Projects</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  <div className="text-4xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                     1+
                   </div>
                   <div className="text-slate-400 text-sm mt-1">Years Exp</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  <div className="text-4xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                     100%
                   </div>
                   <div className="text-slate-400 text-sm mt-1">Dedication</div>
@@ -209,14 +209,14 @@ export default function AboutPage() {
             >
               <div className="relative group">
                 {/* Glowing border effect */}
-                {/* <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-slate-500 to-blue-400 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" /> */}
+                {/* <div className="absolute -inset-1 bg-linear-to-r from-blue-500 via-slate-500 to-blue-400 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" /> */}
 
                 {/* Image container */}
                 <div className="relative ">
                   <img src="/ali2.png" alt="Murtza Zabair" className="w-full h-auto object-cover" />
 
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  {/* Overlay linear */}
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
                 </div>
 
                 {/* Floating elements */}
@@ -235,7 +235,7 @@ export default function AboutPage() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-black via-slate-950 to-black">
+      <section className="py-20 px-6 bg-linear-to-b from-black via-slate-950 to-black">
         <div className="container mx-auto max-w-6xl">
           <div
             className={`text-center mb-16 transition-all duration-1000 ${
@@ -243,7 +243,7 @@ export default function AboutPage() {
             }`}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
                 Tech Arsenal
               </span>
             </h2>
@@ -272,7 +272,7 @@ export default function AboutPage() {
                     <div className="relative group h-full">
                       {/* Glowing background */}
                       <div
-                        className={`absolute -inset-0.5 bg-gradient-to-r ${tech.color} rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-500`}
+                        className={`absolute -inset-0.5 bg-linear-to-r ${tech.color} rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-500`}
                       />
 
                       {/* Card */}
@@ -301,12 +301,12 @@ export default function AboutPage() {
 
           {/* Call to Action */}
           <div className="text-center mt-16">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-slate-600 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105">
+            <button className="group relative px-8 py-4 bg-linear-to-r from-blue-600 to-slate-600 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105">
               <Link href="/contact-me" className="relative z-10 flex items-center gap-2">
                 <Code2 size={20} />
                 Let's Build Something Amazing
               </Link>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
           </div>
         </div>

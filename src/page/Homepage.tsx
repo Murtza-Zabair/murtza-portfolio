@@ -120,6 +120,7 @@ export default function HomePage() {
           >
             <Link
               href="https://github.com/Murtza-Zabair"
+              target="_blank"
               className="p-3 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-full hover:bg-slate-700/50 hover:border-blue-500/50 hover:scale-110 transition-all duration-300"
               aria-label="GitHub"
             >
@@ -127,6 +128,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="https://linkedin.com/in/murtza-zabair"
+              target="_blank"
               className="p-3 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-full hover:bg-slate-700/50 hover:border-blue-500/50 hover:scale-110 transition-all duration-300"
               aria-label="LinkedIn"
             >
@@ -134,6 +136,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="mailto:murtzazabair@gmail.com"
+              target="_blank"
               className="p-3 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-full hover:bg-slate-700/50 hover:border-blue-500/50 hover:scale-110 transition-all duration-300"
               aria-label="Email"
             >
