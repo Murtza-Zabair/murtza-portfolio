@@ -18,15 +18,61 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isLoaded, setIsLoaded] = useState(false);
   const [copiedItem, setCopiedItem] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
 
   React.useEffect(() => {
     setIsLoaded(true);
   }, []);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your message! I'll get back to you soon.");
-    setFormData({ name: '', email: '', message: '' });
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitStatus('error');
+      setSubmitMessage('Please fill in all fields');
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus('error');
+      setSubmitMessage('Please enter a valid email address');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setSubmitMessage('Message sent successfully! I\'ll get back to you soon.');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+        setSubmitMessage(data.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage('Network error. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const copyToClipboard = (text: string, label: string) => {
@@ -101,7 +147,8 @@ export default function ContactPage() {
               <div className="absolute -inset-1 bg-linear-to-r from-blue-500 to-slate-500 rounded-2xl blur-xl opacity-20" />
 
               <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 space-y-6">
-                <div>
+                <form onSubmit={handleSubmit}>
+                  <div>
                   <label className="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
                   <input
                     type="text"
@@ -138,16 +185,40 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {/* Status Message */}
+                {submitStatus !== 'idle' && (
+                  <div
+                    className={`p-4 rounded-lg border ${
+                      submitStatus === 'success'
+                        ? 'bg-green-500/10 border-green-500/30 text-green-400'
+                        : 'bg-red-500/10 border-red-500/30 text-red-400'
+                    }`}
+                  >
+                    {submitMessage}
+                  </div>
+                )}
+
                 <button
-                  onClick={handleSubmit}
-                  className="group relative w-full px-8 py-4 bg-linear-to-r from-blue-600 to-slate-600 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-[1.02]"
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="group relative w-full px-8 py-4 bg-linear-to-r from-blue-600 to-slate-600 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                    Send Message
-                    <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </span>
                   <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
+                </form>
               </div>
             </div>
           </div>
